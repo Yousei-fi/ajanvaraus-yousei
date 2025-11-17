@@ -3,8 +3,6 @@ import { Calendar } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import "@fullcalendar/daygrid/index.css";
-import "@fullcalendar/timegrid/index.css";
 import { DateTime } from "luxon";
 import { onBeforeUnmount, onMounted, ref } from "vue";
 import { getAvailability, postBooking } from "../api";
