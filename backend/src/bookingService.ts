@@ -20,8 +20,8 @@ export async function createBooking(input: BookingInput) {
     description:
       `Lisätiedot: ${input.notes ?? "-"}\n` +
       `Asiakas: ${input.name}\nSähköposti: ${input.email}\nPuhelin: ${input.phone ?? "-"}`,
-    start: { dateTime: start.toISO(), timeZone: "Europe/Helsinki" },
-    end: { dateTime: end.toISO(), timeZone: "Europe/Helsinki" },
+    start: { dateTime: start.toISO()!, timeZone: "Europe/Helsinki" },
+    end: { dateTime: end.toISO()!, timeZone: "Europe/Helsinki" },
     attendees: [{ email: input.email }],
     conferenceData: {
       createRequest: {
@@ -30,7 +30,7 @@ export async function createBooking(input: BookingInput) {
       },
     },
     reminders: { useDefault: true },
-  } as const;
+  };
 
   const evtA = await cal.events.insert({
     calendarId: process.env.AJANVARAUS_CAL_ID!,
