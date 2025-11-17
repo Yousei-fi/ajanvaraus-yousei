@@ -7,7 +7,7 @@ Express + Vue 3 ajanvaraus (booking) MVP, valmis Coolify-deployhin. Taustalla Pr
 ```
 ajanvaraus-yousei/
 ├─ backend/           # Node/Express + Prisma API
-├─ frontend/          # Vue 3 (Vite) SPA + FullCalendar
+├─ frontend/          # Vue 3 (Vite) SPA + FullCalendar + Tailwind CSS
 └─ docker-compose.yml # paikallinen stack / Coolify-palvelu
 ```
 
@@ -28,12 +28,12 @@ npm install
 npm run dev
 ```
 
-Frontend palvelee osoitteessa `http://localhost:5173`, backend `http://localhost:8080`.
+Frontend palvelee osoitteessa `http://localhost:5173`, backend `http://localhost:8090`.
 
 ## Ympäristömuuttujat (`backend/.env`)
 
 ```
-PORT=8080
+PORT=8090
 DATABASE_URL=postgresql://user:pass@host:5432/ajanvaraus
 AJANVARAUS_CAL_ID=your_calendar_id@group.calendar.google.com
 GOOGLE_CLIENT_ID=...
@@ -45,7 +45,7 @@ JWT_SECRET=supersecret
 ALLOWED_ORIGIN=https://ajanvaraus.yousei.fi
 ```
 
-Lisäksi frontendin buildissa (Vite) pitää asettaa `VITE_API_BASE`, esim. tuotannossa `https://ajanvaraus.yousei.fi/api` ja paikallisesti `http://localhost:8080/api`.
+Lisäksi frontendin buildissa (Vite) pitää asettaa `VITE_API_BASE`, esim. tuotannossa `https://ajanvaraus.yousei.fi/api` ja paikallisesti `http://localhost:8090/api`.
 
 ## Google API -integraatio
 
@@ -97,6 +97,6 @@ Aseta token Admin-näkymässä `Authorization: Bearer <token>`.
 
 * FreeBusy-check myös `primary`-kalenterista ennen varausta.
 * Peruutuslinkki ja tapahtumien poisto.
-* Säätö UI: FullCalendar event renderer + Tailwind.
+* Säätö UI: FullCalendar event renderer.
 * hCaptcha/Rate limiting.
 * Monikielisyys (fi/en) ja custom sähköpostit.

@@ -26,7 +26,7 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
   }
 });
 
-const port = Number(process.env.PORT ?? 8080);
+const port = Number(process.env.PORT ?? 8090);
 app.listen(port, () => {
   console.log(`API on :${port}`);
 });

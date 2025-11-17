@@ -20,5 +20,5 @@ COPY --from=base /app/node_modules ./node_modules
 COPY --from=base /app/dist ./dist
 COPY --from=base /app/prisma ./prisma
 
-EXPOSE 8080
+EXPOSE 8090
 CMD ["node", "dist/index.js"]
